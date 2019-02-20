@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            .cell {
+                display: inline-block;
+                width: 20px;
+                padding: 5px;
+                border: 1px solid black;
+                background-color: grey;
+            }
+            .selected {
+                background-color: green;
+            }
+            .valid {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-app="hCode">
+            <div ng-controller="mainCtrl">
+                <div>
+                    L: <input ng-model="l" type="number"/>
+                    H: <input ng-model="h" type="number"/>
+                </div>
+                <div ng-repeat="r in sampleData track by $index">
+                    <div ng-repeat="c in r track by $index" 
+                         class="cell"
+                         ng-class="{'selected': c.selected, 'valid': c.isValid}"
+                         ng-click="trackSelection($parent.$index, $index)" 
+                         ng-mousemove="checkIfCorrect($parent.$index, $index)">
+                        {{c.val}}
+                    </div>
+                </div>
+                <div>
+                    <button ng-click="calculateCells()">Calculate Cells covered</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.7/angular.min.js"></script>
+            <script src="app.js"></script>
+        </div>
+    </body>
+</html>
