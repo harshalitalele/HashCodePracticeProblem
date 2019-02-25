@@ -3,7 +3,7 @@ angular.module("hCode", [])
     var isSelectionStarted = false,
         lefttop = [],
         bottomright = [];
-    $scope.sampleData = generateSample(5, 5);
+    $scope.sampleData = generateSample(18, 15);
     $scope.l = 2;
     $scope.h = 6;
     
