@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 /*To Do:
@@ -37,24 +38,34 @@ public class PizzaSlices {
 				} else {
 					for(int j = 0; j < c; j++) {
 						pizzaObj.pizzaContent[rowCnt-1][j] = sCurrentLine.charAt(j);
-					}
+					}					
+					
 				}
 				rowCnt++;
 			}
 			
 			pizzaObj.display();
-			
-			boolean isValid = pizzaObj.isValidSlice(1, 3, 1, 4);
-			System.out.println("validity: " + isValid);
+			/*
+			 * boolean isValid = pizzaObj.isValidSlice(1, 3, 1, 4);
+			 * System.out.println("validity: " + isValid);
+			 */
 			
 			//fetch all valid slices out of pizza even though they are overlapping
+			int cellNum = 0,
+				cellCnt = r * c;
+			ArrayList<Slice> allSlices = new ArrayList<Slice>();
+			while(cellNum <= cellCnt) {
+				int rnum = cellNum % c,
+					cnum = cellNum / c;
+				ArrayList<Slice> tempSlices = pizzaObj.getAllSlices(rnum, cnum);
+				cellNum++;
+			}
 			
 			//get rid of overlapping slices or cells
 			
 			//include all untouched cells to all the valid slices possible
 			
 			//output r1,c1,r2,c2 of the possible slices
-			
 			
 			
 		} catch (IOException e) {
