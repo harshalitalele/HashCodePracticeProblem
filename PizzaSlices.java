@@ -55,8 +55,8 @@ public class PizzaSlices {
 				cellCnt = r * c;
 			ArrayList<Slice> allSlices = new ArrayList<Slice>();
 			while(cellNum <= cellCnt) {
-				int rnum = cellNum % c,
-					cnum = cellNum / c;
+				int rnum = cellNum / c,
+					cnum = cellNum % c;
 				ArrayList<Slice> tempSlices = pizzaObj.getAllSlices(rnum, cnum);
 				cellNum++;
 			}
