@@ -15,7 +15,7 @@ public class PizzaSlices {
 
 	public static void main(String[] args) {
 		try {
-			FileReader fr = new FileReader("E:\\Studies\\Java POCs\\inputfiles\\a_example.in");
+			FileReader fr = new FileReader("D:\\problem statement\\a_example.in");
 			BufferedReader br = new BufferedReader(fr);
 			String[] rclh = null;
 
@@ -44,7 +44,7 @@ public class PizzaSlices {
 				rowCnt++;
 			}
 			
-			pizzaObj.display();
+			//pizzaObj.display();
 			/*
 			 * boolean isValid = pizzaObj.isValidSlice(1, 3, 1, 4);
 			 * System.out.println("validity: " + isValid);
@@ -57,9 +57,11 @@ public class PizzaSlices {
 			while(cellNum <= cellCnt) {
 				int rnum = cellNum / c,
 					cnum = cellNum % c;
-				ArrayList<Slice> tempSlices = pizzaObj.getAllSlices(rnum, cnum);
+				pizzaObj.getAllSlices(rnum, cnum);
 				cellNum++;
 			}
+			
+			pizzaObj.showMap();
 			
 			//get rid of overlapping slices or cells
 			
